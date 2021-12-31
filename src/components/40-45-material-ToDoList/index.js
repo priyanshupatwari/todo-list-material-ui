@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ListItem, ListItemText, Divider, TextField, ListItemIcon } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import ClearIcon from '@material-ui/icons/Clear';
 import EditIcon from '@material-ui/icons/Edit';
 import './index.css'
+import Head from './Head';
 
 let id = 0;
 export default function VirtualizedList() {
   const date = new Date().toDateString();
   const time = new Date().toLocaleTimeString();
-
+  
   const [editId, setEditId] = useState(null)
   const [input, setInput] = useState('');
   const [item, setItem] = useState([{
     id: 'x',
-    title: 'x',
-    date: 'x',
-    time: 'x',
+    title: 'this is your title',
+    date: 'date',
+    time: 'time',
   }]);
-  console.log(item)
+
   function addItem() {
     id++;
     setItem((prevVal) => {
@@ -48,6 +49,7 @@ export default function VirtualizedList() {
 
   return (
     <div>
+      <Head item={item} />
       <div className='main-container'>
         <div className="container">
           <div className="inputGroup">
@@ -93,14 +95,6 @@ export default function VirtualizedList() {
             }
             )}
           </div>
-        </div>
-      </div>
-      <div className="circles">
-        <div className="contain">
-          <div className="circ one"></div>
-          <div className="circ two"></div>
-          <div className="circ three"></div>
-          <div className="circ four"></div>
         </div>
       </div>
     </div>

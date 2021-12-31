@@ -1,2 +1,0 @@
-**if (component) the router uses React.creataeElement to create a new react element from given component i.e. if you provide an inline funciton to the prop new component is created every render. This results in existing component Unmounting and the new component mounting instead of just updating the existing component.**
-*Use any cuz there is not really any performance issue*
